@@ -1,0 +1,7 @@
+idées pour l'intelligence artificielle à présenter dans le domaine de la défense.
+
+-> Reconnaissance faciale dans les rues ( + problème de stockage des données et confidentialité);
+-> "Robots tueurs"
+-> Espionnage à risques (conversations téléphoniques, écrites, etc..) = tri des données par un robot, évaluation des risques
+-> Evaluation du taux de récidivisme en fonction du comportement d'une personne, pour aller plus vite au tribunal (USA).
+-> IA ALPHA du programme militaire des usa, programme qui simule un combattant aérien, a fait ses preuves contre des vrais pilotes de l'armées. 
