@@ -1,5 +1,6 @@
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
 
 
 ### This files reloads the pyrat_dataset that was stored as a pkl file by the generate dataset script. 
@@ -16,6 +17,7 @@ import pickle, scipy
 x,y = pickle.load(open("pyrat_dataset.pkl","rb"))
 
 ## As the dataset was stored using scipy sparse array to save space, we convert it back to numpy dense array. 
+
 ## Note that you could keep the sparse representation if you work with a machine learning method that accepts sparse arrays. 
 x = scipy.sparse.vstack(x).todense()
 y = scipy.sparse.vstack(y).todense()
@@ -26,14 +28,20 @@ y = np.argmax(np.array(y),1)
 ### Now you have to train a classifier using supervised learning and evaluate it's performance. 
 
 ## To be completed
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
+C = 1
+clf = SVC(C=C)
 
-print(x[4][x[4]>0])
+clf.fit(x_train, y_train)
+
+
 
 
 ### Let's assume you have named your classifier clf . You can save the trained object using the joblib.dump method, as follows: 
 
-#joblib.dump(clf, 'save.pkl') 
+#joblib.dump(clf, 'save.pkl')
 
+print(clf.score(x_test, y_test))
 # Test in pyrat
 ## Now you can use the supervised.py file as an AI directly in Pyrat. 
 # copy save.pkl, utils.py to the pyrat root folder and supervised.py to the pyrat root/AIs folder
