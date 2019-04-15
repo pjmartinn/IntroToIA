@@ -19,6 +19,11 @@ def convert_input(player, maze, opponent, mazeHeight, mazeWidth, piecesOfCheese)
 
     # To be completed : fill in the first layer of the canvas with the value 1 at the location of the cheeses, relative to the position of the player (i.e. the canvas is centered on the player location)
     
+    center_x = mazeWidth - 1
+    center_y = mazeHeight - 1
 
-    
+    for cheese in piecesOfCheese:
+    	x_ch = cheese[0]
+    	y_ch = cheese[1]
+    	canvas[y_ch + center_y - y, x_ch + center_x - x, 0] = 1
     return canvas
