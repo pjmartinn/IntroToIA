@@ -103,6 +103,7 @@ for game in tqdm.tqdm(games):
         x_y = dict_to_x_y(**play,maze=game_params["maze"],end=game["end"])
         if x_y:
             x1, y = x_y
+            print(x1.shape)
             y_train.append(scipy.sparse.csr_matrix(y.reshape(1,-1)))
             x_1_train.append(scipy.sparse.csr_matrix(x1.reshape(1,-1)))
 print("Greedy/Draw/Random Greedy, {}/{}/{}".format(wins_rat,1000 - wins_python - wins_rat, wins_python)) 

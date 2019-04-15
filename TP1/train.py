@@ -30,7 +30,7 @@ y = np.argmax(np.array(y),1)
 ## To be completed
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 C = 1
-clf = SVC(C=C)
+clf = RandomForestClassifier()
 
 clf.fit(x_train, y_train)
 
@@ -39,7 +39,7 @@ clf.fit(x_train, y_train)
 
 ### Let's assume you have named your classifier clf . You can save the trained object using the joblib.dump method, as follows: 
 
-#joblib.dump(clf, 'save.pkl')
+joblib.dump(clf, 'save.pkl')
 
 print(clf.score(x_test, y_test))
 # Test in pyrat
